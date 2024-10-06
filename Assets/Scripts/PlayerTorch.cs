@@ -24,7 +24,7 @@ public class PlayerTorch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0) || Input.GetMouseButtonUp(0)){
+        if(Input.GetMouseButtonDown(0)){
             on = !on;
         }
 
