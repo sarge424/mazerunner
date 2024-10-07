@@ -43,8 +43,6 @@ public class PlayerTorch : MonoBehaviour
             lightSource.intensity = brightness;
         else
             lightSource.intensity = 0f;
-        
-
-        Debug.Log(batteryLife);
+    
     }
 }
