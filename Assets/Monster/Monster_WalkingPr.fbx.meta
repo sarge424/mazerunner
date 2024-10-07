@@ -3,7 +3,12 @@ guid: cf2c0c1099e47174c822b9d07ca9e285
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AboveMonsterRig_aiStandardSurface1
+    second: {fileID: 2100000, guid: 23bad28028e71754294ed6b1451942aa, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

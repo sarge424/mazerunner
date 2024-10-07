@@ -7,11 +7,14 @@ public class MonsterChase : MonoBehaviour
 {
     public Transform player;
     public GameObject torchBeam;
+    public Transform lightSensor;
 
     NavMeshAgent agent;
+    Animator anim;
 
     void Start(){
         agent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
     }
 
 
@@ -23,18 +26,17 @@ public class MonsterChase : MonoBehaviour
         // check for flashlight
         
         Light light = torchBeam.GetComponent<Light>();
-        Vector3 offset = transform.position - torchBeam.transform.position;
+        Vector3 offset = lightSensor.position - torchBeam.transform.position;
         
         // shined in its eyes
         if(Vector3.Angle(torchBeam.transform.forward, offset) <= light.spotAngle && offset.magnitude <= light.range && light.intensity > 0f){
             target = transform.position;
+            anim.speed = 0;
+        }else{
+            anim.speed = 2;
         }
 
-        // close to player and torch on
-        if(offset.magnitude <= 0.3f){
-            target = transform.position;
-            Debug.Log("Nomnom");
-        }
+        Debug.Log("Offset" + offset.magnitude);
 
         agent.SetDestination(target);
     }
