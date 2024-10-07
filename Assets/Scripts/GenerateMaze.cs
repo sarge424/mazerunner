@@ -27,11 +27,11 @@ public class GenerateMaze : MonoBehaviour
     {
 
         //create the floor
-        Transform f = Instantiate(floor, new Vector3(width * tilesize, -.5f, height * tilesize), Quaternion.identity).transform;
+        Transform f = Instantiate(floor, new Vector3(0f, -.5f, 0f), Quaternion.identity).transform;
         f.localScale = new Vector3(2*width + 1, 1/tilesize, 2*height + 1) * tilesize;
         
         //create the ceiling
-        Transform c = Instantiate(ceiling, new Vector3(width * tilesize, 3.5f, height * tilesize), Quaternion.identity).transform;
+        Transform c = Instantiate(ceiling, new Vector3(0f, 3.5f, 0f), Quaternion.identity).transform;
         c.localScale = new Vector3(2*width + 1, 1/tilesize, 2*height + 1) * tilesize;
 
         // create the paths
@@ -73,7 +73,7 @@ public class GenerateMaze : MonoBehaviour
 
         for(int i = 0; i < 2*width + 1; i++){
             for(int j = 0; j < 2*height + 1; j++){
-                tiles[i, j] = Instantiate(wallTile, new Vector3(i, 0, j) * tilesize, Quaternion.identity);
+                tiles[i, j] = Instantiate(wallTile, new Vector3(i - width, 0f, j - height) * tilesize, Quaternion.identity);
                 tiles[i, j].name = "wall"+i+","+j;
             }
         }
@@ -89,6 +89,14 @@ public class GenerateMaze : MonoBehaviour
                     case dir.w: tiles[2*i + 1, 2*j].SetActive(false); break;
                     case dir.s: tiles[2*i + 2, 2*j + 1].SetActive(false); break;
                 }
+            }
+        }
+
+
+        //carve out the starting area
+        for(int i = width-3; i < width + 4; i++){
+            for(int j = height-3; j < height + 4; j++){
+                tiles[i,j].SetActive(false);
             }
         }
 
