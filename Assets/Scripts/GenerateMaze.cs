@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.AI.Navigation;
 
 public class GenerateMaze : MonoBehaviour
 {
@@ -27,12 +28,14 @@ public class GenerateMaze : MonoBehaviour
     {
 
         //create the floor
-        Transform f = Instantiate(floor, new Vector3(0f, -.5f, 0f), Quaternion.identity).transform;
-        f.localScale = new Vector3(2*width + 1, 1/tilesize, 2*height + 1) * tilesize;
+        //Transform f = Instantiate(floor, new Vector3(0f, -.5f, 0f), Quaternion.identity).transform;
+        floor.transform.position = new Vector3(0f, -.5f, 0f);
+        floor.transform.localScale = new Vector3(2*width + 1, 1/tilesize, 2*height + 1) * tilesize;
         
         //create the ceiling
-        Transform c = Instantiate(ceiling, new Vector3(0f, 3.5f, 0f), Quaternion.identity).transform;
-        c.localScale = new Vector3(2*width + 1, 1/tilesize, 2*height + 1) * tilesize;
+        //Transform c = Instantiate(ceiling, new Vector3(0f, 3.5f, 0f), Quaternion.identity).transform;
+        ceiling.transform.position = new Vector3(0f, 3.5f, 0f);
+        ceiling.transform.localScale = new Vector3(2*width + 1, 1/tilesize, 2*height + 1) * tilesize;
 
         // create the paths
         dir[,] maze = new dir[width, height];
@@ -113,6 +116,11 @@ public class GenerateMaze : MonoBehaviour
         //cut out entrance and exit
         //tiles[0,1].SetActive(false);
         tiles[2*width, 2*height-1].SetActive(false);
+
+
+        // navmesh
+        NavMeshSurface surf = floor.GetComponent<NavMeshSurface>();
+        surf.BuildNavMesh();
     }
 
     private bool isRemovable(int i,int j){
