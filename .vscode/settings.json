@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "mazerunner-main.sln"
+    "dotnet.defaultSolution": "mazerunner.sln"
 }
