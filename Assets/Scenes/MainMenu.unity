@@ -179,8 +179,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Bro Whatchoo think you'd find here? Go back and play if you Dare \n(evil
-    laughter)"
+  m_text: (Under Development)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2f860e30375e4ab4ab3e92b45e3bfe96, type: 2}
   m_sharedMaterial: {fileID: 2540752044822008942, guid: 2f860e30375e4ab4ab3e92b45e3bfe96, type: 2}
@@ -1019,8 +1018,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4280627135
-  m_fontColor: {r: 0.7490196, g: 0.1857023, b: 0.14509805, a: 1}
+    rgba: 2267361215
+  m_fontColor: {r: 0.7490196, g: 0.1857023, b: 0.14509805, a: 0.5294118}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
