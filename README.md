@@ -8,3 +8,6 @@ The game was created by:
 - **[v-technoid](https://github.com/v-technoid)**
 
 Escape the procedurally generated maze and avoid the monster chasing you.
+
+Gameplay Link: https://drive.google.com/file/d/16kAbma7FxArehvvOEK0QLV_SIQf0iF8a/view?usp=drive_link
+
